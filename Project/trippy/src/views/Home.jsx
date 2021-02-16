@@ -20,14 +20,14 @@ class Home extends React.Component {
       });
     });
 }
-
+  
   render(){
     return(
-      <section className="hero-section my-5">
+      <section className="hero-section">
           <div className="card-grid">
             {this.state.cities.map((ville, index) => {
               return(
-                <CityCard className={`card img${index+1}`} name={ville.name} source={`${config.host}/${ville.source}`}></CityCard>
+                <CityCard className={`card img${index+1}`} name={ville.name} source={`${config.host}/${ville.source}`} slug={ville.slug}></CityCard>
               )
             })}
         </div>

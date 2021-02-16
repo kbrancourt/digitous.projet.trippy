@@ -1,5 +1,6 @@
 import React from 'react';
 import {BrowserRouter, Switch, Route, Link} from 'react-router-dom';
+import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
 import '../App.css';
 
 class HotelMaker extends React.Component{
@@ -11,7 +12,11 @@ class HotelMaker extends React.Component{
   }
   render(){
     return (
-        <h1>HotelMaker</h1>
+      <Marker position={this.props.position}>
+        <Popup>
+          A pretty CSS3 popup. <br /> Easily customizable.
+        </Popup>
+      </Marker>
       );
   }
   
