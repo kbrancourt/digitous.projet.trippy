@@ -5,17 +5,10 @@ import Hotels from "./views/Hotels";
 import HotelsPages from "./views/HotelsPages";
 import Error from "./views/Error";
 import NavBar from "./components/NavBar";
+import CityCard from "./components/CityCard";
 import "./App.css";
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
-
-  }
-
-
 
   render() {
     return (

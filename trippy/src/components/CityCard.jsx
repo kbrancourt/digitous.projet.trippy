@@ -1,25 +1,25 @@
-import React from 'react';
-import {BrowserRouter, Switch, Route, Link} from 'react-router-dom';
-import '../App.css';
+import React from "react";
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import "../App.css";
 
-class CityCard extends React.Component{
-  const = this.props
+class CityCard extends React.Component {
 
-  render(){
+  render() {
     return (
-        <div>
-          {this.state.cities.map((villes) => {
-          return( 
-            <div>
-              <h1>{villes.name} {villes.slug}</h1>
-              <img src={`http://localhost:3002${villes.source}`} alt="tkt"/>
+
+          <a className={this.props.className} href="#">
+            <div
+              className="card__background"
+            >
+              <img src={this.props.source} alt=""/>
             </div>
-          )
-      })}
-        </div>
-      );
+            <div className="card__content">
+              <p className="card__category">{this.props.name}</p>
+              <h3 className="card__heading">Example Card Heading</h3>
+            </div>
+          </a>
+    );
   }
-  
 }
 
 export default CityCard;
