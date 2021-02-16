@@ -10,14 +10,17 @@ import "./App.css";
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+    };
+
   }
+
+
 
   render() {
     return (
       <BrowserRouter>
         <NavBar></NavBar>
-
         <Switch>
           <Route exact path="/" component={Home}></Route>
           <Route path="/hotels/:city" component={Hotels}></Route>
