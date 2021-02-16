@@ -24,16 +24,25 @@ componentDidMount(){
 }
 
   render(){
+    
     return (
-      <section className="hero-section my-5">
-        <div className="card-grid">
-        <CityCard className="card img1" ></CityCard>
-        <CityCard className="card img2" ></CityCard>
-        <CityCard className="card img3" ></CityCard>
-        <CityCard className="card img4" ></CityCard>
-        <CityCard className="card img5" ></CityCard>
+      <div>
+        <CityCard name={this.state.cities[0].name} slug={this.state.cities[0].slug} source={this.state.cities[0].source}/>
+        {console.log("result",this.state.cities[0].name)}
+        <CityCard name={this.state.cities[0].name} slug={this.state.cities[0].slug} source={this.state.cities[0].source}/>
+        <CityCard name={this.state.cities[0].name} slug={this.state.cities[0].slug} source={this.state.cities[0].source}/>
+        <CityCard name={this.state.cities[0].name} slug={this.state.cities[0].slug} source={this.state.cities[0].source}/>
+        <CityCard name={this.state.cities[0].name} slug={this.state.cities[0].slug} source={this.state.cities[0].source}/>
       </div>
-      </section>
+      // <section className="hero-section my-5">
+      //   <div className="card-grid">
+      //   <CityCard className="card img1" ></CityCard>
+      //   <CityCard className="card img2" ></CityCard>
+      //   <CityCard className="card img3" ></CityCard>
+      //   <CityCard className="card img4" ></CityCard>
+      //   <CityCard className="card img5" ></CityCard>
+      // </div>
+      // </section>
     )
   }
 }

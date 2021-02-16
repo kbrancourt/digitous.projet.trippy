@@ -13,7 +13,14 @@ class CityCard extends React.Component {
 
         </Route>
       </Switch>
-           <a className={this.props.className} href="/">
+      <>
+         <h1>{this.props.name}</h1>
+         <p>{this.props.slug}</p>
+         <img src={`"${this.props.source}"`} alt=""/>
+      </>
+
+
+           {/* <a className={this.props.className} href="/">
             <div
               className="card__background"
             >
@@ -23,7 +30,7 @@ class CityCard extends React.Component {
               <p className="card__category">hello </p>
               <h3 className="card__heading">Example Card Heading</h3>
             </div>
-          </a>
+          </a> */}
       </BrowserRouter>
      
     );
