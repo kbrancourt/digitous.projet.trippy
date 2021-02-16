@@ -11,4 +11,8 @@ class Api {
   }
 }
 
+<<<<<<< HEAD
 export default new Api();
+=======
+getHomeData()
+>>>>>>> b3697f19f38a74fa8ada818159a630f878d4b66c
