@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import "../App.css";
+import Home from "../views/Home"
 
 class CityCard extends React.Component {
 
@@ -8,29 +9,29 @@ class CityCard extends React.Component {
 
     return (
       <BrowserRouter>
-      <Switch>
+      {/* <Switch>
         <Route path="/hotels/{this.state.name}">
 
         </Route>
-      </Switch>
-      <>
+      </Switch> */}
+      {/* <>
          <h1>{this.props.name}</h1>
          <p>{this.props.slug}</p>
          <img src={`"${this.props.source}"`} alt=""/>
-      </>
+      </> */}
 
 
-           {/* <a className={this.props.className} href="/">
+           <a className={this.props.className} href="/">
             <div
               className="card__background"
             >
-              <img src="https://images.unsplash.com/photo-1557177324-56c542165309?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt=""/>
+              <img src={this.props.source} alt=""/>
             </div>
             <div className="card__content">
-              <p className="card__category">hello </p>
+              <p className="card__category">{this.props.name}</p>
               <h3 className="card__heading">Example Card Heading</h3>
             </div>
-          </a> */}
+          </a>
       </BrowserRouter>
      
     );

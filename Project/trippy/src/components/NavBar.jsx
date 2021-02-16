@@ -9,7 +9,7 @@ class NavBar extends React.Component {
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
-            Trippy KHS
+          <i className="fas fa-umbrella-beach"/> Trippy KHS
           </a>
           <button
             className="navbar-toggler"
