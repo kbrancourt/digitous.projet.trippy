@@ -17,7 +17,6 @@ class HotelMap extends React.Component{
     this.setState({
       tkt:[...this.props.np]
     })
-    console.log("je me met en route HotelMap")
   }
 
   render(){

@@ -15,7 +15,6 @@ class HotelMaker extends React.Component{
     this.setState({
       pppp:[...this.props.position]
     })
-    console.log("je me met en route HotelMaker")
   }
 
   render(){
