@@ -7,11 +7,11 @@ class Hotels extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      citiesHotel: [],
-      page: props.match.params.city,
-      center: 0,
-      nbrHotel: 0,
-      tab: [],
+      citiesHotel: [], //=>api.json
+      page: props.match.params.city, //=> valeur de ville ds l'url
+      center: 0, // => position du centre de ville
+      nbrHotel: 0, // => nb d'hotels trouvés
+      tab: [], //=> position des hotels[latitude, longitude]
     };
   }
 
@@ -33,12 +33,19 @@ class Hotels extends React.Component {
           )
         })
       });
-      console.log(this.state.tab)
+      console.log(this.state.citiesHotel)
     })
     .catch((error) => console.error(error));
   }
 
   render() {
+    //if(this.state.citiesHotel >= 1){
+      //return (
+      //  <h1> Hôtels </h1>
+      //  <h2>Voici la liste des hôtels trouvés:</h2> 
+      //  <HotelCard hotel={this.state./>
+      //)
+    //}
     if (this.state.citiesHotel.success) {
       return (
         <>
@@ -48,14 +55,14 @@ class Hotels extends React.Component {
             <strong style={{ color: "green" }}>{this.state.nbrHotel}</strong>{" "}
             hotels
           </h2>
-          <HotelMap center={this.state.center} np={this.state.tab}></HotelMap>
+          <HotelMap  api={this.state.citiesHotel} center={this.state.center} localisations={this.state.tab}></HotelMap>
         </>
       );
     } else {
       return (
         <>
           <h1>Veuillez patienter</h1>
-          <HotelMap center={[51.505, -0.09]} np={this.state.tab}></HotelMap>
+          <HotelMap center={[51.505, -0.09]} localisations={this.state.tab}></HotelMap> 
         </>
       );
     }

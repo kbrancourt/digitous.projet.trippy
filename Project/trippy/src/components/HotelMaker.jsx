@@ -3,25 +3,25 @@ import {BrowserRouter, Switch, Route, Link} from 'react-router-dom';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
 import '../App.css';
 
+
 class HotelMaker extends React.Component{
   constructor(props){
     super(props);
     this.state={
-      pppp:[]
+      pose:[...this.props.position],
+      citiesHotel:[...this.props.api],
     }
   }
 
-  componentDidMount(){
-    this.setState({
-      pppp:[...this.props.position]
-    })
-  }
-
+  
   render(){
         return (
-      <Marker position={this.props.position}>
+      <Marker position={this.state.pose}>
         <Popup>
           A pretty CSS3 popup. <br /> Easily customizable.
+          <>
+            <p>coucou</p>
+          </>
         </Popup>
       </Marker>
       );

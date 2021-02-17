@@ -8,28 +8,30 @@ class HotelMap extends React.Component{
   constructor(props){
     super(props);
     this.state={
-      tkt:[],
+      coord:[], //=> coordonnées [latitude, longitude]
+      citiesHotel: [] ,
     }
   }
 
 
   componentDidMount(){
     this.setState({
-      tkt:[...this.props.np],
+      coord:[...this.props.localisations],
+      citiesHotel: [...this.props.api]
     })
   }
 
   render(){
-    if(this.state.tkt.length > 1){
+    if(this.state.coord.length > 1){
       return (
       <Map style={{height: "60vh"}} center={this.props.center} zoom={13} scrollWheelZoom={true}>
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {this.state.tkt.map((hotelPoint)=>{
+        {this.state.coord.map((hotelPoint)=>{
           return(
-            <HotelMaker position={hotelPoint}></HotelMaker>
+            <HotelMaker api={this.state.citiesHotel}  position={hotelPoint}></HotelMaker>
           )
         })}
     </Map>
