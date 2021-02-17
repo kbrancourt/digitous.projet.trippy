@@ -40,7 +40,7 @@ class NavBar extends React.Component {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/hotels/:id" className="nav-link" href="#">
+                <Link to="/hotel/:id" className="nav-link" href="#">
                   Hôtels Page
                 </Link>
               </li>

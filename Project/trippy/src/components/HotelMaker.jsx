@@ -8,20 +8,16 @@ class HotelMaker extends React.Component{
   constructor(props){
     super(props);
     this.state={
-      pose:[...this.props.position],
-      citiesHotel:[...this.props.api],
     }
   }
-
   
   render(){
         return (
-      <Marker position={this.state.pose}>
+      <Marker position={this.props.position}>
         <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
-          <>
-            <p>coucou</p>
-          </>
+          <h1>{this.props.nom}</h1>
+          <p>{this.props.adresses}</p>
+          <p>{this.props.prix}€</p>
         </Popup>
       </Marker>
       );

@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import {BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import Home from "./views/Home";
 import Hotels from "./views/Hotels";
 import HotelsPages from "./views/HotelsPages";
@@ -14,12 +14,14 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <NavBar></NavBar>
+        <div className="container">
         <Switch>
           <Route exact path="/" component={Home}></Route>
           <Route path="/hotels/:city" component={Hotels}></Route>
-          <Route path="/hotels/:id" component={HotelsPages}></Route>
+          <Route path="/hotel/:id" component={HotelsPages}></Route>
           <Route path="*" component={Error}></Route>
         </Switch>
+        </div>
       </BrowserRouter>
     );
   }

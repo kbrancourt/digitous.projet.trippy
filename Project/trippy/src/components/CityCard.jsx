@@ -12,7 +12,7 @@ class CityCard extends React.Component {
             <div
               className="card__background"
             >
-              <img  src={this.props.source} alt=""/>
+              <img  src={this.props.source || "http://via.placeholder.com/300x200"} alt=""/>
             </div>
             <div className="card__content">
               <p className="card__category">{this.props.name}</p>
