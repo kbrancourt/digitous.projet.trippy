@@ -15,7 +15,7 @@ class HotelMap extends React.Component{
 
   componentDidMount(){
     this.setState({
-      tkt:[...this.props.np]
+      tkt:[...this.props.np],
     })
   }
 

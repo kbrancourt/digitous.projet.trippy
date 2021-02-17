@@ -13,44 +13,31 @@ class Hotels extends React.Component {
       nbrHotel: 0,
       tab: [],
     };
-    console.log("state");
   }
 
   componentDidMount() {
-    console.log("didMount");
-    this.tkt()
+    fetch(`http://localhost:3002/api/hotels/city/${this.state.page}`)
+    .then((res) => {
+      return res.json();
+    })
+    .then((hotel) => {
+      let lat = hotel.center.lat;
+      let lon = hotel.center.lon;
+      this.setState({
+        citiesHotel: hotel,
+        center: [lat, lon],
+        nbrHotel: hotel.total,
+        tab: hotel.results.map((hotel) => {
+          return(
+            [hotel.location.lat, hotel.location.lon]
+          )
+        })
+      });
+    })
+    .catch((error) => console.error(error));
   }
 
-  tkt = () => {
-    fetch(`http://localhost:3002/api/hotels/city/${this.state.page}`)
-      .then((res) => {
-        console.log(res);
-        return res.json();
-      })
-      .then((hotel) => {
-        console.log(hotel);
-        let lat = hotel.center.lat;
-        let lon = hotel.center.lon;
-        this.setState({
-          citiesHotel: hotel,
-          center: [lat, lon],
-          nbrHotel: hotel.total,
-        });
-      })
-      .then(() => {
-        this.state.citiesHotel.results.map((hotel) => {
-          this.setState({
-            tab: [...this.state.tab, [hotel.location.lat, hotel.location.lon]],
-          });
-        });
-      })
-      .catch((error) => console.error(error));
-  };
-
   render() {
-    {
-      console.log("render");
-    }
     if (this.state.citiesHotel.success) {
       return (
         <>
