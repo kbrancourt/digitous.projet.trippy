@@ -36,19 +36,24 @@ class Hotels extends React.Component {
         })
       })
     })
+    console.log("je me met en route Hotel")
   }
 
   render() {
     if (this.state.citiesHotel.success){
       return (
         <>
-        <h1>coucou</h1>
-        <h2>Nous avons trouver <strong style={{color: "green"}}>{this.state.nbrHotel}</strong> hotels</h2>
-        <HotelMap center={this.state.center} np={this.state.tab}></HotelMap>
+          <h1>coucou</h1>
+          <h2>Nous avons trouver <strong style={{color: "green"}}>{this.state.nbrHotel}</strong> hotels</h2>
+          <HotelMap center={this.state.center} np={this.state.tab}></HotelMap>
         </>
       );
     }else{
-      return <h1>Veuillez patienter</h1>
+      return (
+      <>
+        <h1>Veuillez patienter</h1>
+      </>
+      )
     }
   }
 }

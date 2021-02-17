@@ -7,10 +7,20 @@ class HotelMaker extends React.Component{
   constructor(props){
     super(props);
     this.state={
-      
+      pppp:[]
     }
   }
+
+  componentDidMount(){
+    this.setState({
+      pppp:[...this.props.position]
+    })
+    console.log("je me met en route HotelMaker")
+  }
+
   render(){
+    
+    console.log(this.state.pppp)
     return (
       <Marker position={this.props.position}>
         <Popup>

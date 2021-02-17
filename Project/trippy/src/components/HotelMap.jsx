@@ -8,15 +8,22 @@ class HotelMap extends React.Component{
   constructor(props){
     super(props);
     this.state={
-      tkt:[...this.props.np],
+      tkt:[],
     }
   }
 
+
+  componentDidMount(){
+    this.setState({
+      tkt:[...this.props.np]
+    })
+    console.log("je me met en route HotelMap")
+  }
+
   render(){
-    console.log(this.state.tkt)
-    if(this.state.tkt.length>1){
+    if(this.state.tkt.length > 1){
       return (
-      <Map style={{height:500}} center={this.props.center} zoom={13} scrollWheelZoom={true}>
+      <Map style={{height: "60vh"}} center={this.props.center} zoom={13} scrollWheelZoom={true}>
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -29,7 +36,9 @@ class HotelMap extends React.Component{
     </Map>
       );
     }else{
-      return<h1>Veuillez patienter</h1>
+      return(
+        <h1>Veuillez patienter</h1>
+      )
     }
   }
   
