@@ -33,6 +33,7 @@ class Hotels extends React.Component {
           )
         })
       });
+      console.log(this.state.tab)
     })
     .catch((error) => console.error(error));
   }
