@@ -4,6 +4,7 @@ import '../App.css';
 import StarsRating from "stars-rating";
 import HotelMap from "../components/HotelMap"
 import ImageGallery from 'react-image-gallery';
+import Iconscard from "../components/Iconscard";
 
 
 class HotelsPages extends React.Component{
@@ -75,6 +76,7 @@ class HotelsPages extends React.Component{
               <div>
                 <ImageGallery items={this.state.images} />
               </div>
+              <div><Iconscard commodités={this.state.commodités}></Iconscard></div>
         </div>
       );
     }else{
