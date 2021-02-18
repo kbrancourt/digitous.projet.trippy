@@ -31,16 +31,16 @@ class NavBar extends React.Component {
                   aria-current="page"
                   href="#"
                 >
-                  Home
+                  Hotels
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/hotels/:city" className="nav-link" href="#">
-                  Hôtels
+                <Link to="#" className="nav-link" href="#">
+                  restaurants
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/hotel/:id" className="nav-link" href="#">
+                <Link to="#" className="nav-link" href="#">
                   Hôtels Page
                 </Link>
               </li>

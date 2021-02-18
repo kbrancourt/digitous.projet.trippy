@@ -4,7 +4,6 @@ import '../App.css';
 import StarsRating from "stars-rating";
 import HotelMap from "../components/HotelMap"
 import ImageGallery from 'react-image-gallery';
-import Iconscard from "../components/Iconscard";
 
 
 class HotelsPages extends React.Component{
@@ -20,6 +19,7 @@ class HotelsPages extends React.Component{
       find:false,
       pos:[],
       images:[],
+      adresse:"",
     }
   }
 
@@ -32,12 +32,13 @@ class HotelsPages extends React.Component{
         stars: hotel.result.stars,
         prix: hotel.result.price,
         name: hotel.result.name,
+        adresse: hotel.result.address,
         commodités: [...hotel.result.commodities],
         find: hotel.success,
         pos: [hotel.result.location.lat, hotel.result.location.lon],
         // images : hotel.result.pictures
       })
-      // console.log(this.state.hotelInfos)
+      console.log(this.state.commodités.length)
       // console.log("imgs",this.state.images)
     })
   }
@@ -57,8 +58,6 @@ class HotelsPages extends React.Component{
     if(this.state.find && this.state.pos.length >= 1){
       return (
         <div className="p-5">
-          <button onClick={this.test}>images</button>
-          <h1>id : <strong style={{color: "#261758"}}>{this.state.idPage}</strong></h1>
           <h1>prix : <strong style={{color: "#261758"}}>{this.state.prix} €</strong></h1>
           <h1>name : <strong style={{color: "#261758"}}>{this.state.name}</strong></h1>
           <h1>stars : {this.state.stars === null && " pas de note" || 
@@ -71,12 +70,19 @@ class HotelsPages extends React.Component{
                 />
               }</h1>
               <div>
-                <HotelMap pos={this.state.pos}></HotelMap>
+                <HotelMap price={this.state.prix} name ={this.state.name} street={this.state.adresse} pos={this.state.pos}></HotelMap>
               </div>
               <div>
                 <ImageGallery items={this.state.images} />
               </div>
-              <div><Iconscard commodités={this.state.commodités}></Iconscard></div>
+              <div>
+              {this.state.commodités.length > 0 &&
+                this.state.commodités.map((commodities, index) => {
+                  return (                                    
+                    <h3><span className="material-icons">done</span>{commodities}</h3>
+                  );
+                })}
+              </div>
         </div>
       );
     }else{
@@ -89,3 +95,4 @@ class HotelsPages extends React.Component{
 }
 
 export default HotelsPages;
+
