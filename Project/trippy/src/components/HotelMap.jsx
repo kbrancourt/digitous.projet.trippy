@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import "../App.css";
-import { Map, TileLayer, Marker, Popup, Circle } from "react-leaflet";
+import { Map, TileLayer, Marker, Popup, Circle, Tooltip } from "react-leaflet";
 import HotelMaker from "./HotelMaker";
 
 class HotelMap extends React.Component {
@@ -69,13 +69,13 @@ class HotelMap extends React.Component {
             {/* <Popup permanent>
               <h1>pas trouvé</h1>
             </Popup> */}
-            {/* <Tooltip direction="top" offset={[-16,27]} opacity={1} permanent>
+            <Tooltip direction="top" offset={[-16,27]} opacity={1} permanent>
               <div className="text-center">
                 <h5>{this.props.name}</h5>
                 <h1>{this.props.price} €</h1>
                 <p>{this.props.street}</p>
               </div>
-            </Tooltip> */}
+            </Tooltip>
             <Circle center={this.state.pos} fillColor="green" radius={20} />
           </Marker>
         </Map>

@@ -4,6 +4,7 @@ import '../App.css';
 import StarsRating from "stars-rating";
 import HotelMap from "../components/HotelMap"
 import ImageGallery from 'react-image-gallery';
+import Caroussel from '../components/Caroussel';
 
 
 class HotelsPages extends React.Component{
@@ -36,23 +37,13 @@ class HotelsPages extends React.Component{
         commodités: [...hotel.result.commodities],
         find: hotel.success,
         pos: [hotel.result.location.lat, hotel.result.location.lon],
-        // images : hotel.result.pictures
+        images : hotel.result.pictures
       })
-      console.log(this.state.commodités.length)
+      // console.log(this.state.commodités.length)
       // console.log("imgs",this.state.images)
     })
   }
 
-  test=() =>{
-    let tkt = [];
-    tkt = this.state.images.map((img) => {
-      return [{original:img},{thumbnail:"http://via.placeholder.com/300x200"}]
-    })
-    this.setState({
-      images: tkt
-    })
-    console.log("tkt",tkt)
-  }
 
   render(){
     if(this.state.find && this.state.pos.length >= 1){
@@ -73,37 +64,27 @@ class HotelsPages extends React.Component{
                 <HotelMap price={this.state.prix} name ={this.state.name} street={this.state.adresse} pos={this.state.pos}></HotelMap>
               </div>
               <div>
-                <ImageGallery items={this.state.images} />
-              </div>
-              <div>
               {this.state.commodités.length > 0 &&
                 this.state.commodités.map((commodities, index) => {
                   switch (commodities){
-                    case "wifi": return <span class="material-icons"> {commodities}</span>;
-                    case "swimming pool" : return <span class="material-icons">{commodities}</span>;
-                    case "breakfast included" : return <span class="material-icons">{commodities}</span>;
-                    case "animals" : return<span class="material-icons">{commodities}</span>;
-                    case "dry cleaning" : return <span class="material-icons">{commodities}</span>;
-                    case "conditioning" : return <span class="material-icons">{commodities}</span>
-                    case " family" : return<span class="material-icons">family_restroom{commodities}</span>;
-                    case " bar" : return<span class="material-icons">bar{commodities}</span>;
-                    case "disabled access " : return<span class="material-icons">{commodities}</span>;
-                    case "non smoking" : return<span class="material-icons">{commodities}</span>;
-                    case "multilingual staff" : return<span class="material-icons">{commodities}</span>;
-                    case "dry cleaning" : return<span class="material-icons">{commodities}</span>;
-                    case "disabled access" : return<span class="material-icons">{commodities}</span>;
-                    case "gym" : return<span class="material-icons">{commodities}</span>;
-                    case "restaurant" : return<span class="material-icons">{commodities}</span>;
-                    case "rom service" : return<span class="material-icons">{commodities}</span>;
-                    case "spa" : return<span class="material-icons">{commodities}</span>;
-                    case "conciergerie" : return<span class="material-icons">{commodities}</span>;
-                    case "shuttle" : return<span class="material-icons">{commodities}</span>;
-                    case "breakfast included" : return<span class="material-icons">{commodities}</span>;
-                    case "air conditioning" : return<span class="material-icons">{commodities}</span>;
-                    case "minibar" : return<span class="material-icons">{commodities}</span>;
+                    case "wifi": return <p><span className="material-icons">wifi</span> Wifi gratuit</p>;
+                    case "swimming pool" : return <p><span className="material-icons">pool</span> Piscine</p>;
+                    case "breakfast included" : return <p><span className="material-icons">free_breakfast</span> Petit déjeuner gratuit</p>;
+                    case "animals" : return<p><span className="material-icons">pets</span> Animal(aux)</p>;
+                    case "dry cleaning" : return <p><span className="material-icons">dry_cleaning</span> Nettoyage à sec</p>;
+                    case "family" : return <p><span className="material-icons">family_restroom</span> Famille nombreuse</p>;
+                    case "bar" : return <p><span className="material-icons">local_bar</span> Bar</p>
+                    case "disabled access" : return<p><span className="material-icons">accessible</span> Accessible aux handicapés</p>;
+                    case "non smoking" : return<p><span className="material-icons">smoke_free</span> Non fumeur</p>;
+                    case "multilingual staff" : return<p><span className="material-icons">language</span> Employé multilingue</p>;
+                    case "gym" : return<p><span className="material-icons">fitness_center</span> Salle de sport</p>;
+                    case "restaurant" : return<p><span className="material-icons">restaurant</span> Restaurant</p>;
+                    case "rom service" : return<p><span className="material-icons">room_service</span> Room service</p>;
+                    case "spa" : return<p><span className="material-icons">spa</span> spa</p>;
+                    case "shuttle" : return<p><span className="material-icons">airport_shuttle</span> Navette</p>;
+                    case "air conditioning" : return<p><span className="material-icons">air</span> Air conditionné</p>;
+                    case "minibar" : return<p><span className="material-icons">coffee_maker</span> Minibar</p>;
                    default:
-                    
-                    
                 }
                 })}
               </div>
