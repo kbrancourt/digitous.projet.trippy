@@ -34,17 +34,29 @@ class HotelsPages extends React.Component{
         commodités: [...hotel.result.commodities],
         find: hotel.success,
         pos: [hotel.result.location.lat, hotel.result.location.lon],
+        // images : hotel.result.pictures
       })
-      console.log(this.state.hotelInfos)
-      console.log(this.state.commodités)
+      // console.log(this.state.hotelInfos)
+      // console.log("imgs",this.state.images)
     })
   }
 
+  test=() =>{
+    let tkt = [];
+    tkt = this.state.images.map((img) => {
+      return [{original:img},{thumbnail:"http://via.placeholder.com/300x200"}]
+    })
+    this.setState({
+      images: tkt
+    })
+    console.log("tkt",tkt)
+  }
+
   render(){
-    console.log('pos',this.state.hotelInfos)
     if(this.state.find && this.state.pos.length >= 1){
       return (
         <div className="p-5">
+          <button onClick={this.test}>images</button>
           <h1>id : <strong style={{color: "#261758"}}>{this.state.idPage}</strong></h1>
           <h1>prix : <strong style={{color: "#261758"}}>{this.state.prix} €</strong></h1>
           <h1>name : <strong style={{color: "#261758"}}>{this.state.name}</strong></h1>
@@ -61,7 +73,7 @@ class HotelsPages extends React.Component{
                 <HotelMap pos={this.state.pos}></HotelMap>
               </div>
               <div>
-               
+                <ImageGallery items={this.state.images} />
               </div>
         </div>
       );

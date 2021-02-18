@@ -15,7 +15,7 @@ class HotelCard extends React.Component {
     return (
       <Link to={`/hotel/${this.props.id}`} className="text-decoration-none text-body">
         <div className="card " style={{ width: "18rem", marginRight: "10px", marginBottom: "10px" }}>
-          <img className="card-img-top" src={"http://via.placeholder.com/300x200" || this.props.image} alt="Card image cap"/>
+          <img className="card-img-top" onError={(ev) => {ev.target.src = "http://via.placeholder.com/300x200"}} src={this.props.image} alt="Card image cap"/>
           <div className="card-body ">
             <p className="card-text ">Nom : {this.props.name}</p>
             <p className="card-text">Stars :{(this.props.stars === null && " pas de note") || (

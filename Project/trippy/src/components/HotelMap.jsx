@@ -53,7 +53,7 @@ class HotelMap extends React.Component {
         <Map
           style={{ height: "60vh" }}
           center={this.state.pos}
-          zoom={16}
+          zoom={17}
           scrollWheelZoom={false}
         >
           <TileLayer

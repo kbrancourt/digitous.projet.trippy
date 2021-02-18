@@ -44,11 +44,13 @@ class Hotels extends React.Component {
             return hotel.name;
           }),
         });
+        console.log(this.state.citiesHotel.results[0].pictures[0])
       })
       .catch((error) => console.error(error));
   }
 
   render() {
+    {}
     if (this.state.citiesHotel.success) {
       return (
         <>

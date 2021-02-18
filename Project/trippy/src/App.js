@@ -13,9 +13,9 @@ class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <div className="container-fluid">
+        <main className="container-fluid">
           <NavBar></NavBar>
-        </div>
+        </main>
         <div className="container">
         <Switch>
           <Route exact path="/" component={Home}></Route>
