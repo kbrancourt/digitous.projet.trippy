@@ -3,6 +3,7 @@ import {BrowserRouter, Switch, Route, Link, useParams} from 'react-router-dom';
 import '../App.css';
 import StarsRating from "stars-rating";
 import HotelMap from "../components/HotelMap"
+import ImageGallery from 'react-image-gallery';
 
 
 class HotelsPages extends React.Component{
@@ -17,6 +18,7 @@ class HotelsPages extends React.Component{
       commodités:[],
       find:false,
       pos:[],
+      images:[],
     }
   }
 
@@ -34,7 +36,7 @@ class HotelsPages extends React.Component{
         pos: [hotel.result.location.lat, hotel.result.location.lon],
       })
       console.log(this.state.hotelInfos)
-      console.log(this.state.pos)
+      console.log(this.state.commodités)
     })
   }
 
@@ -46,7 +48,6 @@ class HotelsPages extends React.Component{
           <h1>id : <strong style={{color: "#261758"}}>{this.state.idPage}</strong></h1>
           <h1>prix : <strong style={{color: "#261758"}}>{this.state.prix} €</strong></h1>
           <h1>name : <strong style={{color: "#261758"}}>{this.state.name}</strong></h1>
-          <h1>commodités : <strong style={{color: "#261758"}}>{this.state.commodités}</strong></h1>
           <h1>stars : {this.state.stars === null && " pas de note" || 
                 <StarsRating
                   value={this.state.stars}
@@ -58,6 +59,9 @@ class HotelsPages extends React.Component{
               }</h1>
               <div>
                 <HotelMap pos={this.state.pos}></HotelMap>
+              </div>
+              <div>
+               
               </div>
         </div>
       );
