@@ -78,9 +78,33 @@ class HotelsPages extends React.Component{
               <div>
               {this.state.commodités.length > 0 &&
                 this.state.commodités.map((commodities, index) => {
-                  return (                                    
-                    <h3><span className="material-icons">done</span>{commodities}</h3>
-                  );
+                  switch (commodities){
+                    case "wifi": return <span class="material-icons"> {commodities}</span>;
+                    case "swimming pool" : return <span class="material-icons">{commodities}</span>;
+                    case "breakfast included" : return <span class="material-icons">{commodities}</span>;
+                    case "animals" : return<span class="material-icons">{commodities}</span>;
+                    case "dry cleaning" : return <span class="material-icons">{commodities}</span>;
+                    case "conditioning" : return <span class="material-icons">{commodities}</span>
+                    case " family" : return<span class="material-icons">family_restroom{commodities}</span>;
+                    case " bar" : return<span class="material-icons">bar{commodities}</span>;
+                    case "disabled access " : return<span class="material-icons">{commodities}</span>;
+                    case "non smoking" : return<span class="material-icons">{commodities}</span>;
+                    case "multilingual staff" : return<span class="material-icons">{commodities}</span>;
+                    case "dry cleaning" : return<span class="material-icons">{commodities}</span>;
+                    case "disabled access" : return<span class="material-icons">{commodities}</span>;
+                    case "gym" : return<span class="material-icons">{commodities}</span>;
+                    case "restaurant" : return<span class="material-icons">{commodities}</span>;
+                    case "rom service" : return<span class="material-icons">{commodities}</span>;
+                    case "spa" : return<span class="material-icons">{commodities}</span>;
+                    case "conciergerie" : return<span class="material-icons">{commodities}</span>;
+                    case "shuttle" : return<span class="material-icons">{commodities}</span>;
+                    case "breakfast included" : return<span class="material-icons">{commodities}</span>;
+                    case "air conditioning" : return<span class="material-icons">{commodities}</span>;
+                    case "minibar" : return<span class="material-icons">{commodities}</span>;
+                   default:
+                    
+                    
+                }
                 })}
               </div>
         </div>
