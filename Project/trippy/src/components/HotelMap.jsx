@@ -33,7 +33,7 @@ class HotelMap extends React.Component {
     if (this.state.coord != null) {
       return (
         <Map
-          style={{ height: "50vh", width: "95%"}}
+          style={{ height: "450px", width: "100%"}}
           center={this.props.center}
           zoom={12}
           scrollWheelZoom={false}
@@ -43,7 +43,7 @@ class HotelMap extends React.Component {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
           {this.state.coord.map((item, index) => (
-            <HotelMaker
+            <HotelMaker 
             position={item}
             adresses={this.state.adresses[index]}
             prix={this.state.prix[index]}
@@ -56,7 +56,7 @@ class HotelMap extends React.Component {
     } else if (this.state.pos !== null) {
       return (
         <Map
-          style={{ height: "60vh" }}
+          style={{ height: "450px", width: "100%" }}
           center={this.state.pos}
           zoom={17}
           scrollWheelZoom={false}
@@ -70,10 +70,9 @@ class HotelMap extends React.Component {
               <h1>pas trouvé</h1>
             </Popup> */}
             <Tooltip direction="top" offset={[-16,27]} opacity={1} permanent>
-              <div className="text-center">
+              <div className="text-center" >
                 <h5>{this.props.name}</h5>
-                <h1>{this.props.price} €</h1>
-                <p>{this.props.street}</p>
+                <h2>{this.props.price} €</h2>
               </div>
             </Tooltip>
             <Circle center={this.state.pos} fillColor="green" radius={20} />

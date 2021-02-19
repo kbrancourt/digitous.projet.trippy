@@ -1,7 +1,7 @@
 .styled{
   background: url("https://images.unsplash.com/photo-1557177324-56c542165309?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80");
 }
-:root{
+/* :root{
   --background-dark: #2d3548;
   --text-light: rgba(255,255,255,0.6);
   --text-lighter: rgba(255,255,255,0.9);
@@ -11,7 +11,7 @@
   --spacing-xl: 32px;
   --spacing-xxl: 64px;
   --width-container: 1200px;
-}
+} */
 
 *{
   border: 0;
@@ -30,22 +30,22 @@ body{
   height: 100%;
 }
 
-.hero-section{
+/* .hero-section{
   align-items: flex-start;
   background-image: linear-gradient(15deg, #0f4667 0%, #2a6973 150%);
   display: flex;
   min-height: 100%;
   justify-content: center;
-}
+} */
 
-.grid-container {
+/* .grid-container {
   display: grid;
   grid-template-columns: 1.6fr 0.3fr 1.1fr;
   
 }
 .card-grid:hover > .card:not(:hover) .card__background{   
   filter: brightness(0.5) saturate(0) contrast(0.7) blur(5px); 
-}
+} */
 
 .card-grid{
   display: grid;
@@ -85,23 +85,12 @@ body{
 .img5 { grid-area: img5; }
 
 
-.card{
-  list-style: none;
-  position: relative;
-}
-
-.card:before{
-  content: '';
-  display: block;
-  width: 100%;
-}
-
 img{
   width: 100%;
   height: 100%;
 }
 
-.card__background{
+/* .card__background{
   border-radius: 5px;
   bottom: 0;
   filter: brightness(0.75) saturate(1.2) contrast(0.85);
@@ -144,11 +133,8 @@ img{
   text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
   line-height: 1.4;
   word-spacing: 100vw;
-}
+} */
 
-
-.hcards{
-}
 
 .hcard{
   width: 250px;
@@ -170,4 +156,196 @@ img{
 
 .leaflet-container{
   margin: 0 auto;
+}
+.navbar{
+  border-bottom: 1px solid white;
+  position:relative;
+  top: 0;
+}
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+header{
+  background: url("https://cdn.pixabay.com/photo/2017/01/20/00/30/maldives-1993704_960_720.jpg") no-repeat center/cover;
+  height: 80vh;
+  position: relative;
+}
+.logo{
+  background: #0675a1;
+  font-weight: bolder;
+  font-size: 20px;
+  color: #fff;
+  padding: 3px;
+}
+
+header li a{
+  background: #0675a1;
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+
+header li a:hover{
+  background: #488eaa97;
+}
+.accueil{
+  background: #2a8eb597;
+  padding: 20px;
+  height: 20vh;
+  width: 40vh;
+  margin-left: 20%;
+  margin-top: 20%;
+}
+
+.accueil-title{
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.accueil-title-contenu{
+  padding: 28px;
+  position: relative;
+  width: 90%;
+  background: #2a8eb597;
+}
+.accueil-title button, .card-content button{
+  background:#1F89B4 ;
+  border: 1px solid #176888;
+  padding: 5px 22px;
+  border-radius: 10px;
+  filter: drop-shadow(-6px 6px 4px rgba(0, 0, 0, 0.25));
+  position: absolute;
+  bottom: -15px;
+  left: 40px;
+  color: white;
+
+}
+
+.filter{
+  padding: 15px 10px 10px 10px;
+  background:#2a8eb597 ;
+  margin:0 auto;
+  margin-top: 120px;
+}
+
+.filter-content{
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.citiesCards{
+  margin-top: 70px;
+}
+/* 
+main img{
+  width: 100%;
+  height: 100%;
+} */
+
+@media(max-width:1000px){
+  main{
+      margin-top: 130px;
+  }
+}
+
+
+.card{
+  position: relative;
+}
+.card-content{
+  background: #2a8eb597;
+  width: 40%;
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  padding: 30px;
+  color: white;
+}
+
+.card-content button{
+  background: #2888B2;
+}
+.card-content button:hover{
+  background: #0f2e3b;
+}
+
+@media(max-width : 1200px){
+  .card-content{
+    width: 70%;
+  }
+}
+@media(max-width : 768px){
+  .card-content p, .card-content button{
+    display: none;
+  }
+  .card-content{
+    width: auto;
+  }
+}
+
+.icons{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.icon{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 130px;
+}
+.icon:hover{
+  cursor: pointer;
+  background: #0675a1;
+  color: #fff;
+}
+
+.hotelInfo{
+  text-align: center;
+  width: 90%;
+  margin: 100px auto;
+  margin-bottom: 30px;
+}
+
+.stars{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.dropdown-menu li{
+  padding: 5px;
+  font-size: 15px;
+}
+.dropdown-menu li:hover{
+  background: #2a8eb597;
+  color: #fff;
+}
+
+.carou{
+  width: 90%;
+  margin: 0 auto;
+  border: 2px solid black;
+}
+.carou img{
+  width: 100%;
+  margin: 0 auto;
+  height: 600px;
+}
+.carou span{
+ color: black;
 }

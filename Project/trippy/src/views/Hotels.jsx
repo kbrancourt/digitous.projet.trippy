@@ -53,7 +53,8 @@ class Hotels extends React.Component {
     {}
     if (this.state.citiesHotel.success) {
       return (
-        <div className="mb-5 text-center mt-4">
+        <div className="container-fluid citiesCards">
+          <div className="mb-5 text-center mt-4">
           <h2>
             Nous avons trouvés{" "}
             <strong style={{ color: "green" }}>{this.state.nbrHotel}</strong>{" "}
@@ -68,7 +69,7 @@ class Hotels extends React.Component {
               localisations={this.state.tab}
             ></HotelMap>
           </div>
-          <div className="col-12 d-flex flex-wrap justify-content-center gap-2 pb-5">
+          <div className="container col-12 d-flex flex-wrap justify-content-center gap-2 pb-5">
             {this.state.tab.map((item, index) => (
                 <HotelCard
                   id={this.state.citiesHotel.results[index]._id}
@@ -80,6 +81,7 @@ class Hotels extends React.Component {
                 ></HotelCard>
             ))}
           </div>
+        </div>
         </div>
       );
     } else {

@@ -7,23 +7,23 @@ import Error from "./views/Error";
 import NavBar from "./components/NavBar";
 import CityCard from "./components/CityCard";
 import "./App.css";
+import Header from "./components/Header"
+
 
 class App extends React.Component {
 
   render() {
     return (
       <BrowserRouter>
+        <Header></Header>
         <main className="container-fluid">
-          <NavBar></NavBar>
-        </main>
-        <div className="container">
         <Switch>
           <Route exact path="/" component={Home}></Route>
           <Route path="/hotels/:city" component={Hotels}></Route>
           <Route path="/hotel/:id" component={HotelsPages}></Route>
           <Route path="*" component={Error}></Route>
         </Switch>
-        </div>
+        </main>
       </BrowserRouter>
     );
   }
