@@ -33,7 +33,7 @@ class HotelMap extends React.Component {
     if (this.state.coord != null) {
       return (
         <Map
-          style={{ height: "60vh" }}
+          style={{ height: "50vh", width: "95%"}}
           center={this.props.center}
           zoom={12}
           scrollWheelZoom={false}

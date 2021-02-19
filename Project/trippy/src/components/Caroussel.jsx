@@ -1,20 +1,17 @@
-// import React from "react";
-// import "../App.css";
+import React from "react";
+import "../App.css";
+import ImageGallery from 'react-image-gallery';
 
-// class Caroussel extends React.Component {
-//     render() {
-//         console.log(this.props.img)
-//         return (
-//                 <div className="row">
-//                     {/* {this.props.img.map((image) => {
-//                         return <img src={`../../public${image}`} alt=""/>
-//                     })} */}
-//                     <img src="../../public/img/hotels/597573_21.jpg" alt=""/>
-//                 </div>
-//         )
-//     }
-// }
-// export default Caroussel
+class Caroussel extends React.Component {
+    render() {
+        return(
+            <div>
+                <ImageGallery items={this.props.img} />;
+            </div>
+        )
+    }
+}
+export default Caroussel
 
 {/* <div className="col-12">
             <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
@@ -38,3 +35,13 @@
                 </button>
             </div>
         </div> */}
+        
+
+        // console.log(this.props.img)
+//         return (
+//                 <div className="row">
+//                     {/* {this.props.img.map((image) => {
+//                         return <img src={`../../public${image}`} alt=""/>
+//                     })} */}
+//                     <img src="../../public/img/hotels/597573_21.jpg" alt=""/>
+//                 </div>

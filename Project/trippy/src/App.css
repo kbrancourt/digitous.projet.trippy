@@ -145,3 +145,29 @@ img{
   line-height: 1.4;
   word-spacing: 100vw;
 }
+
+
+.hcards{
+}
+
+.hcard{
+  width: 250px;
+  height: 300px;
+  position: relative;
+}
+.hcard-img{
+  width: 100%;
+  height: 100%;
+}
+.hcard-content{
+  padding: 10px;
+  height: 90px;
+  width: 100%;
+  position: absolute;
+  bottom: 20px;
+  background: rgba(255, 255, 255, 0.699);
+}
+
+.leaflet-container{
+  margin: 0 auto;
+}

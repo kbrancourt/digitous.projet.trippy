@@ -19,7 +19,11 @@ class HotelsPages extends React.Component{
       commodités:[],
       find:false,
       pos:[],
-      images:[],
+      images:[
+        {
+          original: 'https://picsum.photos/id/1018/1000/600/',
+          thumbnail: 'https://picsum.photos/id/1018/250/150/',
+        }],
       adresse:"",
     }
   }
@@ -37,10 +41,12 @@ class HotelsPages extends React.Component{
         commodités: [...hotel.result.commodities],
         find: hotel.success,
         pos: [hotel.result.location.lat, hotel.result.location.lon],
-        images : hotel.result.pictures
+        images : hotel.result.pictures.map((img) => {
+          return {original: img, thumbnail:img}
+        })
       })
       // console.log(this.state.commodités.length)
-      // console.log("imgs",this.state.images)
+      console.log("imgs",this.state.images)
     })
   }
 
@@ -88,6 +94,9 @@ class HotelsPages extends React.Component{
                 }
                 })}
               </div>
+              {/* <div>
+                <Caroussel img={this.state.images}></Caroussel>
+              </div> */}
         </div>
       );
     }else{
